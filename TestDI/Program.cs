@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Autofac;
 
 namespace TestDI
@@ -7,7 +8,7 @@ namespace TestDI
     {
         private static IContainer Container { get; set; }
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<ConsoleOutput>().As<IOutput>();
@@ -16,7 +17,6 @@ namespace TestDI
 
             WriteDate();
         }
-
 
         public static void WriteDate()
         {
